@@ -1,200 +1,200 @@
 <rdf:RDF xmlns="http://vocab.info/calendars#" 
-xmlns:cidoc="http://purl.org/NET/crm-owl#" 
-xmlns:dbpedia-owl="http://dbpedia.org/ontology/" 
-xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:ncal="http://www.semanticdesktop.org/ontologies/2007/04/02/ncal#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" 
-xmlns:void="http://rdfs.org/ns/void#" 
-xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
-  
-  
-  
-  
-<void:Dataset rdf:about="http://vocab.info/calendars">
-    <rdf:type rdf:resource="http://rdfs.org/ns/void#Dataset"></rdf:type>
-    <dcterms:title>Ontology for the representation of medieval calendar data</dcterms:title>
-    <dcterms:identifier>o:grote.ontology</dcterms:identifier>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"></rdf:type>
-    <dc:title>Medieval Christian Calendars Ontology</dc:title>
-<dc:creator>Dominique Stutzmann (dominique.stutzmann@irht.cnrs.fr)</dc:creator>
-<dc:creator>Doug Emery</dc:creator>
-<dc:creator>George Gordon</dc:creator>
-<dc:creator>Elisabeth Raunig (elisabeth.raunig@uni-graz.at)</dc:creator>
-<dc:creator>Georg Vogeler (georg.vogeler@uni-graz.at)</dc:creator>
-    <owl:versionInfo>V 0.1, 2019-05-23</owl:versionInfo>
-</void:Dataset>
-<rdf:Class rdf:about="http://purl.org/NET/crm-owl#E5_Event"/>
-  
-<rdfs:Class rdf:about=”http://vocab.info/calendars#ReligiousEvent”>
-    <rdfs:subClassOf rdf:resource="http://purl.org/NET/crm-owl#E5_Event"/>
-    <rdfs:comment>All events in the history related to God, the history of Salvation of mankind, the life of religious communities, and to the life and afterlife of a saint. This class comprises the events of the life of Christ, the manifestation of the Trinity in the history of mankind (e.g. Pentecost), and the life of religious communities (dedicatio ecclesiae), and the life and afterlife of saints (mainly death/natalis, but also elevatio), including the events related to their relics (inventio, translatio).</rdfs:comment>
-</rdfs:Class>
-
-<rdfs:Class rdf:about="http://vocab.info/calendars#Feast">
-    <rdfs:subClassOf rdf:resource="http://purl.org/NET/crm-owl#E28_Conceptual_Object"/>    <rdfs:comment>The feast as an abstract entity describing the concept of a religious event like the death of a saint considered to be commemorated.</rdfs:comment>
-</rdf:Class>
-<rdf:Property rdf:about="http://vocab.info/calendars#isCelebratedBy">
-    <rdfs:range rdf:resource="http://vocab.info/calendars#Celebration"/>
-    <rdfs:domain rdf:resource="http://vocab.info/calendars#Feast”/>
-  </rdf:Property>
-  <rdf:Property rdf:about="http://vocab.info/calendars#celebrates">
-    <owl:inverseOf rdf:resource="http://vocab.info/calendars#isCelebratedBy"/>
-  </rdf:Property>
-<rdf:Property rdf:about="http://vocab.info/calendars#isFeastOf">
-    <owl:inverseOf rdf:resource="http://vocab.info/calendars#isCelebratedBy"/>
-    <rdfs:range rdf:resource="http://vocab.info/calendars#Saint"/>
-    <rdfs:domain rdf:resource="http://vocab.info/calendars#Feast"/>
-  </rdf:Property>
-  <rdf:Property rdf:about="http://vocab.info/calendars#hasActivityFeasttype">
-    <rdfs:comment>The type of religious event to celebrate, e.g. the transfer of relics ("translatio”).</rdfs:comment>
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-    <rdfs:domain rdf:resource="http://vocab.info/calendars#Feast"/>
-  </rdf:Property>
-
-<rdf:Class rdf:about="http://vocab.info/calendars#Celebration">
-    <rdfs:subClassOf rdf:resource="http://purl.org/NET/crm-owl#E7_Activity"/>
-    <rdfs:comment>The practice in a religious community to celebrate a feast.</rdfs:comment>
-  </rdf:Class>
- <rdf:Property rdf:about="http://vocab.info/calendars#hasFeastRank">
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-    <rdfs:domain rdf:resource="http://vocab.info/calendars#Celebration"/>
-  </rdf:Property>
-  <rdf:Property rdf:about="http://vocab.info/calendars#hasFulltext">
-    <rdfs:comment>Merges all text from original Grotefend data into one string to enable fulltext search</rdfs:comment>
-    <rdfs:domain rdf:resource="http://vocab.info/calendars#Celebration"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-  </rdf:Property>
-  
-  <rdf:Class rdf:about="http://vocab.info/calendars#Inscription">
-    <rdfs:subClassOf rdf:resource="http://purl.org/NET/crm-owl#E31_Document"/>
-    <rdfs:comment>Any part of text given by the “document” and making a statement, in particular about a celebration (connection of date+feast+community), but including other information (obits, annalistic notes, astrological or astronomical observations), cf. E34_Inscription</rdfs:comment>
-  </rdf:Class>
-
-
-  <rdf:Class rdf:about="http://vocab.info/calendars#Document">
-    <rdfs:subClassOf rdf:resource="http://purl.org/NET/crm-owl#E31_Document"/>
-    <rdfs:comment>A text documenting the temporal distribution of religious practice.</rdfs:comment>
-  </rdf:Class>
-  <rdf:Property rdf:about="http://vocab.info/calendars#hasSourceInfo">
-    <rdfs:comment>verbal description of the source</rdfs:comment>
-    <rdfs:domain rdf:resource="http://vocab.info/calendars#Document"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-  </rdf:Property>
-<rdf:Property rdf:about="http://vocab.info/calendars#hasRepository">
-    <rdfs:comment>Name of the Repository (https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-repository.html)</rdfs:comment>
-    <rdfs:domain rdf:resource="http://vocab.info/calendars#Document"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-  </rdf:Property>
-<rdf:Property rdf:about="http://vocab.info/calendars#hasIdno">
-    <rdfs:comment>Name of the Repository (https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-idno.html)</rdfs:comment>
-    <rdfs:domain rdf:resource="http://vocab.info/calendars#Document"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-  </rdf:Property>
-
-
-  <rdf:Property rdf:about="http://vocab.info/calendars#temporalTypeOfCelebrationrelatesToCelebrationhasTemporalFeasttype">
-    <rdfs:comment>The temporal relationship between a celebration and the standard chronological place of a feast (e.g. "octava", "vigilia"). This could even include more elaborate descriptions like “the first sunday before …”</rdfs:comment>
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-    <rdfs:domain rdf:resource="http://vocab.info/calendars#Celebration"/>
-  </rdf:Property>
-
-<rdf:Property rdf:about="http://vocab.info/calendars#dependsOnCelebration">
-    <rdfs:range rdf:resource=”http://vocab.info/calendars#Celebration”/>
-    <rdfs:domain rdf:resource=”http://vocab.info/calendars#Celebration”/>
-    <rdfs:comment>Feast can be celebrated in relation to other feasts, e.g. the vigilia on the evening of the feast.</rdfs:comment>
-</rdf:Property>
-
-
-  <rdf:Property rdf:about="http://vocab.info/calendars#isPerformedIn">
-    <rdfs:range rdf:resource="http://vocab.info/calendars#EcclesiasticalUnit"/>
-    <rdfs:domain rdf:resource="http://vocab.info/calendars#Celebration"/>
-  </rdf:Property>
- 
-
- <rdf:Property rdf:about="http://vocab.info/calendars#shasSource">
-    <rdfs:comment>references a text (manuscript, print) or a collection of texts related to the entity</rdfs:comment>
-    <rdfs:range rdf:resource="http://vocab.info/calendars#Document"/>
-    <rdfs:domain rdf:resource="http://www.semanticdesktop.org/ontologies/2007/04/02/ncal#Calendar"/>
-  </rdf:Property>
-
-  <rdf:Property rdf:about="http://vocab.info/calendars#isDocumentedIn">
-    <rdfs:subPropertyOf rdf:resource="http://vocab.info/calendars#sourcehasSource"></rdfs:subPropertyOf>
-    <rdfs:range rdf:resource="http://vocab.info/calendars#Document"/>
-    <rdfs:domain rdf:resource="http://vocab.info/calendars#Celebration"/>
-  </rdf:Property>
-  
-  <rdf:Class rdf:about="http://vocab.info/calendars#EcclesiasticalUnit"/>
-  <rdf:Property rdf:about="http://vocab.info/calendars#isPerformedIn">
-    <rdfs:range rdf:resource="http://vocab.info/calendars#EcclesiasticalUnit"/>
-    <rdfs:domain rdf:resource="http://vocab.info/calendars#Celebration"/>
-  </rdf:Property>
-  
-  
-   <rdf:Class rdf:about="http://vocab.info/calendars#Diocese">
-    <rdfs:subClassOf rdf:resource="http://vocab.info/calendars#EcclesiasticalUnit"/>
-  </rdf:Class>
-  
-  <rdf:Class rdf:about="http://vocab.info/calendars#Order">
-    <rdfs:comment>A religious community defined by personal membership instead of geographical</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://vocab.info/calendars#EcclesiasticalUnit"/>
-  </rdf:Class>
-  
-  <rdf:Class rdf:about="http://vocab.info/calendars#geopoliticalUnit">
-    <rdfs:comment>A geo-political unit</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://vocab.info/calendars#EcclesiasticalUnit"/>
-  </rdf:Class>
-
-  <rdf:Class rdf:about="http://vocab.info/calendars#Everywhere">
-    <rdfs:comment>The full orbis christianus</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://vocab.info/calendars#EcclesiasticalUnit"/>
-  </rdf:Class>
-  <rdf:Property rdf:about="http://vocab.info/calendars#hasCalendar">
-    <rdfs:domain rdf:resource="http://vocab.info/calendars#EcclesiasticalUnit"/>
-    <rdfs:range rdf:resource="http://www.semanticdesktop.org/ontologies/2007/04/02/ncal#Calendar"/>
-  </rdf:Property>
-  <rdf:Property rdf:about="http://vocab.info/calendars#isDefinedBy">
-    <owl:inverseOf rdf:resource="http://vocab.info/calendars#defines"/>
-  </rdf:Property>
-  <rdf:Property rdf:about="http://vocab.info/calendars#defines">
-    <rdfs:range rdf:resource="http://vocab.info/calendars#Celebration"/>
-    <rdfs:domain rdf:resource="http://www.semanticdesktop.org/ontologies/2007/04/02/ncal#Calendar"/>
-  </rdf:Property>
-  
-  <rdf:Class rdf:about="http://www.semanticdesktop.org/ontologies/2007/04/02/ncal#Calendar">
-    <rdfs:subClassOf rdf:resource="http://purl.org/NET/crm-owl#E73_Information_Object"/>
-    <rdfs:comment>A system of organizing days through a year.</rdfs:comment>
-  </rdf:Class>
-  <rdf:Class rdf:about="http://vocab.info/calendars#DioceseCalendar">
-    <rdfs:subClassOf rdf:resource="http://www.semanticdesktop.org/ontologies/2007/04/02/ncal#Calendar"/>
-    <rdfs:comment>A calendar in practice in a specific diocese.</rdfs:comment>
-  </rdf:Class>
-  
-  <rdf:Class rdf:about="http://vocab.info/calendars#OrderCalendar">
-    <rdfs:subClassOf rdf:resource="http://www.semanticdesktop.org/ontologies/2007/04/02/ncal#Calendar"/>
-    <rdfs:comment>A calendar in practice in a religious order.</rdfs:comment>
-  </rdf:Class>
-  
+    xmlns:cidoc="http://purl.org/NET/crm-owl#" 
+    xmlns:dbpedia-owl="http://dbpedia.org/ontology/" 
+    xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:ncal="http://www.semanticdesktop.org/ontologies/2007/04/02/ncal#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" 
+    xmlns:void="http://rdfs.org/ns/void#" 
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
     
-  
-  
-  <rdf:Class rdf:about="http://dbpedia.org/ontology/Saint"/>
-    <owl:sameAs rdf:resource="http://dbpedia.org/ontology/Saint"/>
-  </rdf:Class>
-  <rdf:Property rdf:about="http://vocab.info/calendars#isCelebratedBy">
-    <rdfs:range rdf:resource="http://vocab.info/calendars#Feast"/>
-    <rdfs:domain rdf:resource="http://vocab.info/calendars#Saint"/>
-  </rdf:Property>
-  <rdf:Property rdf:about="http://vocab.info/calendars#hasFunctionIn">
-    <rdfs:comment>The saint can be identified by a ecclesiastical function at a specific place (e.g. bishop in ...)</rdfs:comment>
-    <rdfs:domain rdf:resource="http://vocab.info/calendars#Saint"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-  </rdf:Property>
-  <rdf:Property rdf:about="http://vocab.info/calendars#hasFunction">
-    <rdfs:comment>The saint can be identified by a religious/ecclesiastical function </rdfs:comment>
-    <rdfs:domain rdf:resource="http://vocab.info/calendars#Saint"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-  </rdf:Property>
-  <rdf:Property rdf:about="http://vocab.info/calendars#hasCanonizationYear">
-    <rdfs:domain rdf:resource="http://vocab.info/calendars#Saint"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-  </rdf:Property>
+    
+    
+    
+    <void:Dataset rdf:about="http://vocab.info/calendars">
+        <rdf:type rdf:resource="http://rdfs.org/ns/void#Dataset"></rdf:type>
+        <dcterms:title>Ontology for the representation of medieval calendar data</dcterms:title>
+        <dcterms:identifier>o:grote.ontology</dcterms:identifier>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"></rdf:type>
+        <dc:title>Medieval Christian Calendars Ontology</dc:title>
+        <dc:creator>Dominique Stutzmann (dominique.stutzmann@irht.cnrs.fr)</dc:creator>
+        <dc:creator>Doug Emery</dc:creator>
+        <dc:creator>George Gordon</dc:creator>
+        <dc:creator>Elisabeth Raunig (elisabeth.raunig@uni-graz.at)</dc:creator>
+        <dc:creator>Georg Vogeler (georg.vogeler@uni-graz.at)</dc:creator>
+        <owl:versionInfo>V 0.1, 2019-05-23</owl:versionInfo>
+    </void:Dataset>
+    <rdf:Class rdf:about="http://purl.org/NET/crm-owl#E5_Event"/>
+    
+    <rdfs:Class rdf:about="http://vocab.info/calendars#ReligiousEvent">
+        <rdfs:subClassOf rdf:resource="http://purl.org/NET/crm-owl#E5_Event"/>
+        <rdfs:comment>All events in the history related to God, the history of Salvation of mankind, the life of religious communities, and to the life and afterlife of a saint. This class comprises the events of the life of Christ, the manifestation of the Trinity in the history of mankind (e.g. Pentecost), and the life of religious communities (dedicatio ecclesiae), and the life and afterlife of saints (mainly death/natalis, but also elevatio), including the events related to their relics (inventio, translatio).</rdfs:comment>
+    </rdfs:Class>
+    
+    <rdfs:Class rdf:about="http://vocab.info/calendars#Feast">
+        <rdfs:subClassOf rdf:resource="http://purl.org/NET/crm-owl#E28_Conceptual_Object"/>    
+        <rdfs:comment>The feast as an abstract entity describing the concept of a religious event like the death of a saint considered to be commemorated.</rdfs:comment>
+        </rdfs:Class>
+        <rdf:Property rdf:about="http://vocab.info/calendars#isCelebratedBy">
+            <rdfs:range rdf:resource="http://vocab.info/calendars#Celebration"/>
+            <rdfs:domain rdf:resource="http://vocab.info/calendars#Feast"/>
+        </rdf:Property>
+        <rdf:Property rdf:about="http://vocab.info/calendars#celebrates">
+            <owl:inverseOf rdf:resource="http://vocab.info/calendars#isCelebratedBy"/>
+        </rdf:Property>
+        <rdf:Property rdf:about="http://vocab.info/calendars#isFeastOf">
+            <owl:inverseOf rdf:resource="http://vocab.info/calendars#isCelebratedBy"/>
+            <rdfs:range rdf:resource="http://vocab.info/calendars#Saint"/>
+            <rdfs:domain rdf:resource="http://vocab.info/calendars#Feast"/>
+        </rdf:Property>
+        <rdf:Property rdf:about="http://vocab.info/calendars#hasActivityFeasttype">
+            <rdfs:comment>The type of religious event to celebrate, e.g. the transfer of relics ("translatio”).</rdfs:comment>
+            <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            <rdfs:domain rdf:resource="http://vocab.info/calendars#Feast"/>
+        </rdf:Property>
+        
+        <rdf:Class rdf:about="http://vocab.info/calendars#Celebration">
+            <rdfs:subClassOf rdf:resource="http://purl.org/NET/crm-owl#E7_Activity"/>
+            <rdfs:comment>The practice in a religious community to celebrate a feast.</rdfs:comment>
+        </rdf:Class>
+        <rdf:Property rdf:about="http://vocab.info/calendars#hasFeastRank">
+            <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            <rdfs:domain rdf:resource="http://vocab.info/calendars#Celebration"/>
+        </rdf:Property>
+        <rdf:Property rdf:about="http://vocab.info/calendars#hasFulltext">
+            <rdfs:comment>Merges all text from original Grotefend data into one string to enable fulltext search</rdfs:comment>
+            <rdfs:domain rdf:resource="http://vocab.info/calendars#Celebration"/>
+            <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        </rdf:Property>
+        
+        <rdf:Class rdf:about="http://vocab.info/calendars#Inscription">
+            <rdfs:subClassOf rdf:resource="http://purl.org/NET/crm-owl#E31_Document"/>
+            <rdfs:comment>Any part of text given by the “document” and making a statement, in particular about a celebration (connection of date+feast+community), but including other information (obits, annalistic notes, astrological or astronomical observations), cf. E34_Inscription</rdfs:comment>
+        </rdf:Class>
+        
+        
+        <rdf:Class rdf:about="http://vocab.info/calendars#Document">
+            <rdfs:subClassOf rdf:resource="http://purl.org/NET/crm-owl#E31_Document"/>
+            <rdfs:comment>A text documenting the temporal distribution of religious practice.</rdfs:comment>
+        </rdf:Class>
+        <rdf:Property rdf:about="http://vocab.info/calendars#hasSourceInfo">
+            <rdfs:comment>verbal description of the source</rdfs:comment>
+            <rdfs:domain rdf:resource="http://vocab.info/calendars#Document"/>
+            <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        </rdf:Property>
+        <rdf:Property rdf:about="http://vocab.info/calendars#hasRepository">
+            <rdfs:comment>Name of the Repository (https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-repository.html)</rdfs:comment>
+            <rdfs:domain rdf:resource="http://vocab.info/calendars#Document"/>
+            <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        </rdf:Property>
+        <rdf:Property rdf:about="http://vocab.info/calendars#hasIdno">
+            <rdfs:comment>Name of the Repository (https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-idno.html)</rdfs:comment>
+            <rdfs:domain rdf:resource="http://vocab.info/calendars#Document"/>
+            <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        </rdf:Property>
+        
+        
+        <rdf:Property rdf:about="http://vocab.info/calendars#temporalTypeOfCelebrationrelatesToCelebrationhasTemporalFeasttype">
+            <rdfs:comment>The temporal relationship between a celebration and the standard chronological place of a feast (e.g. "octava", "vigilia"). This could even include more elaborate descriptions like “the first sunday before …”</rdfs:comment>
+            <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            <rdfs:domain rdf:resource="http://vocab.info/calendars#Celebration"/>
+        </rdf:Property>
+        
+        <rdf:Property rdf:about="http://vocab.info/calendars#dependsOnCelebration">
+            <rdfs:range rdf:resource="http://vocab.info/calendars#Celebration"/>
+                <rdfs:domain rdf:resource="http://vocab.info/calendars#Celebration"/>
+                    <rdfs:comment>Feast can be celebrated in relation to other feasts, e.g. the vigilia on the evening of the feast.</rdfs:comment>
+        </rdf:Property>
+        
+        
+        <rdf:Property rdf:about="http://vocab.info/calendars#isPerformedIn">
+            <rdfs:range rdf:resource="http://vocab.info/calendars#EcclesiasticalUnit"/>
+            <rdfs:domain rdf:resource="http://vocab.info/calendars#Celebration"/>
+        </rdf:Property>
+        
+        
+        <rdf:Property rdf:about="http://vocab.info/calendars#shasSource">
+            <rdfs:comment>references a text (manuscript, print) or a collection of texts related to the entity</rdfs:comment>
+            <rdfs:range rdf:resource="http://vocab.info/calendars#Document"/>
+            <rdfs:domain rdf:resource="http://www.semanticdesktop.org/ontologies/2007/04/02/ncal#Calendar"/>
+        </rdf:Property>
+        
+        <rdf:Property rdf:about="http://vocab.info/calendars#isDocumentedIn">
+            <rdfs:subPropertyOf rdf:resource="http://vocab.info/calendars#sourcehasSource"></rdfs:subPropertyOf>
+            <rdfs:range rdf:resource="http://vocab.info/calendars#Document"/>
+            <rdfs:domain rdf:resource="http://vocab.info/calendars#Celebration"/>
+        </rdf:Property>
+        
+        <rdf:Class rdf:about="http://vocab.info/calendars#EcclesiasticalUnit"/>
+        <rdf:Property rdf:about="http://vocab.info/calendars#isPerformedIn">
+            <rdfs:range rdf:resource="http://vocab.info/calendars#EcclesiasticalUnit"/>
+            <rdfs:domain rdf:resource="http://vocab.info/calendars#Celebration"/>
+        </rdf:Property>
+        
+        
+        <rdf:Class rdf:about="http://vocab.info/calendars#Diocese">
+            <rdfs:subClassOf rdf:resource="http://vocab.info/calendars#EcclesiasticalUnit"/>
+        </rdf:Class>
+        
+        <rdf:Class rdf:about="http://vocab.info/calendars#Order">
+            <rdfs:comment>A religious community defined by personal membership instead of geographical</rdfs:comment>
+            <rdfs:subClassOf rdf:resource="http://vocab.info/calendars#EcclesiasticalUnit"/>
+        </rdf:Class>
+        
+        <rdf:Class rdf:about="http://vocab.info/calendars#geopoliticalUnit">
+            <rdfs:comment>A geo-political unit</rdfs:comment>
+            <rdfs:subClassOf rdf:resource="http://vocab.info/calendars#EcclesiasticalUnit"/>
+        </rdf:Class>
+        
+        <rdf:Class rdf:about="http://vocab.info/calendars#Everywhere">
+            <rdfs:comment>The full orbis christianus</rdfs:comment>
+            <rdfs:subClassOf rdf:resource="http://vocab.info/calendars#EcclesiasticalUnit"/>
+        </rdf:Class>
+        <rdf:Property rdf:about="http://vocab.info/calendars#hasCalendar">
+            <rdfs:domain rdf:resource="http://vocab.info/calendars#EcclesiasticalUnit"/>
+            <rdfs:range rdf:resource="http://www.semanticdesktop.org/ontologies/2007/04/02/ncal#Calendar"/>
+        </rdf:Property>
+        <rdf:Property rdf:about="http://vocab.info/calendars#isDefinedBy">
+            <owl:inverseOf rdf:resource="http://vocab.info/calendars#defines"/>
+        </rdf:Property>
+        <rdf:Property rdf:about="http://vocab.info/calendars#defines">
+            <rdfs:range rdf:resource="http://vocab.info/calendars#Celebration"/>
+            <rdfs:domain rdf:resource="http://www.semanticdesktop.org/ontologies/2007/04/02/ncal#Calendar"/>
+        </rdf:Property>
+        
+        <rdf:Class rdf:about="http://www.semanticdesktop.org/ontologies/2007/04/02/ncal#Calendar">
+            <rdfs:subClassOf rdf:resource="http://purl.org/NET/crm-owl#E73_Information_Object"/>
+            <rdfs:comment>A system of organizing days through a year.</rdfs:comment>
+        </rdf:Class>
+        <rdf:Class rdf:about="http://vocab.info/calendars#DioceseCalendar">
+            <rdfs:subClassOf rdf:resource="http://www.semanticdesktop.org/ontologies/2007/04/02/ncal#Calendar"/>
+            <rdfs:comment>A calendar in practice in a specific diocese.</rdfs:comment>
+        </rdf:Class>
+        
+        <rdf:Class rdf:about="http://vocab.info/calendars#OrderCalendar">
+            <rdfs:subClassOf rdf:resource="http://www.semanticdesktop.org/ontologies/2007/04/02/ncal#Calendar"/>
+            <rdfs:comment>A calendar in practice in a religious order.</rdfs:comment>
+        </rdf:Class>
+        
+        
+        
+        
+        <rdf:Class rdf:about="http://dbpedia.org/ontology/Saint">
+        <owl:sameAs rdf:resource="http://dbpedia.org/ontology/Saint"/>
+        </rdf:Class>
+        <rdf:Property rdf:about="http://vocab.info/calendars#isCelebratedBy">
+            <rdfs:range rdf:resource="http://vocab.info/calendars#Feast"/>
+            <rdfs:domain rdf:resource="http://vocab.info/calendars#Saint"/>
+        </rdf:Property>
+        <rdf:Property rdf:about="http://vocab.info/calendars#hasFunctionIn">
+            <rdfs:comment>The saint can be identified by a ecclesiastical function at a specific place (e.g. bishop in ...)</rdfs:comment>
+            <rdfs:domain rdf:resource="http://vocab.info/calendars#Saint"/>
+            <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        </rdf:Property>
+        <rdf:Property rdf:about="http://vocab.info/calendars#hasFunction">
+            <rdfs:comment>The saint can be identified by a religious/ecclesiastical function </rdfs:comment>
+            <rdfs:domain rdf:resource="http://vocab.info/calendars#Saint"/>
+            <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        </rdf:Property>
+        <rdf:Property rdf:about="http://vocab.info/calendars#hasCanonizationYear">
+            <rdfs:domain rdf:resource="http://vocab.info/calendars#Saint"/>
+            <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        </rdf:Property>
 </rdf:RDF>
-
