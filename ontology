@@ -45,6 +45,10 @@
             elevatio), including the events related to their relics (inventio,
             translatio).</rdfs:comment>
     </rdfs:Class>
+    <rdf:Property rdf:about="http://vocab.info/calendars#experiences">
+        <rdfs:range rdf:resource="http://vocab.info/calendars#ReligiousEvent"/>
+        <rdfs:domain rdf:resource="http://purl.org/NET/crm-owl#E39_Actor"/>
+    </rdf:Property>
     <rdfs:Class rdf:about="http://vocab.info/calendars#Feast">
         <rdfs:subClassOf rdf:resource="http://purl.org/NET/crm-owl#E28_Conceptual_Object"/>
         <rdfs:comment>The feast as an abstract entity describing the concept of a religious event
