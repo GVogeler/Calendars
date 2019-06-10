@@ -286,12 +286,12 @@
     </rdf:Class>
     <rdf:Class rdf:about="http://vocab.info/calendars#DioceseCalendar">
         <rdfs:subClassOf
-            rdf:resource="http://www.semanticdesktop.org/ontologies/2007/04/02/ncal#Calendar"/>
+            rdf:resource="http://vocab.info/calendars#Calendar"/>
         <rdfs:comment>A calendar in practice in a specific diocese.</rdfs:comment>
     </rdf:Class>
     <rdf:Class rdf:about="http://vocab.info/calendars#OrderCalendar">
         <rdfs:subClassOf
-            rdf:resource="http://www.semanticdesktop.org/ontologies/2007/04/02/ncal#Calendar"/>
+            rdf:resource="http://vocab.info/calendars#Calendar"/>
         <rdfs:comment>A calendar in practice in a religious order.</rdfs:comment>
     </rdf:Class>
     <rdf:Property rdf:about="http://vocab.info/calendars#hasFunctionIn">
