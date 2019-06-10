@@ -169,6 +169,10 @@
         <rdfs:domain rdf:resource="http://vocab.info/calendars#Source"/>
         <rdfs:range rdf:resource="http://vocab.info/calendars#SourceCreation"/>
     </rdf:Property>
+    <rdf:Property rdf:about="http://vocab.info/calendars#hasIdentifier">
+        <rdfs:domain rdf:resource="http://vocab.info/calendars#Source"/>
+        <rdfs:range rdf:resource="http://vocab.info/calendars#SourceIdentifier"/>
+    </rdf:Property>
     <rdf:Class rdf:about="http://vocab.info/calendars#SourceIdentifier">
         <rdfs:subClassOf rdf:resource="http://purl.org/NET/crm-owl#E15_Identifier_Assignment"/>
         <rdfs:comment>The SourceIdentifier is typically composed of one of the following sets of information : 
