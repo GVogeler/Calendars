@@ -20,7 +20,6 @@
         <dc:creator>Georg Vogeler (georg.vogeler@uni-graz.at)</dc:creator>
         <owl:versionInfo>V 0.1, 2019-05-23</owl:versionInfo>
     </void:Dataset>
-    <rdf:Class rdf:about="http://purl.org/NET/crm-owl#E5_Event"/>
     <rdf:Class rdf:about="http://vocab.info/calendars#Actor">
         <rdfs:subClassOf rdf:resource="http://purl.org/NET/crm-owl#E39_Actor"/>
         <rdfs:comment>The actor experiencing the religious event. It is mostly a saint
@@ -52,8 +51,17 @@
             dbpedia.org with domain "saint" are mostly shortcuts for events, e.g. beatification
             (dbo:beatifiedBy, dbo:beatifiedDate, dbo:beatifiedPlace), canonization (dbo:canonizedBy,
             dbo:canonizedDate, dbo:canonizedPlace); some others are attached to the person or connect them to things and places
-            (dbo:iconographicAttributes, dbo:majorShrine, dbo:veneratedIn)</rdfs:comment>
+            (dbo:iconographicAttributes, dbo:majorShrine, dbo:veneratedIn). 
+        The sacraments, elections, transfers from a diocese to another, promotion to a higher dignity are ReligiousEvent(s) attached to date and place.</rdfs:comment>
     </rdfs:Class>
+    <rdf:Property rdf:about="http://vocab.info/calendars#hasDate">
+        <rdfs:range rdf:resource="http://purl.org/NET/crm-owl#E50_Date"/>
+        <rdfs:domain rdf:resource="http://vocab.info/calendars#ReligiousEvent"/>
+    </rdf:Property>
+    <rdf:Property rdf:about="http://vocab.info/calendars#takesPlaceIn">
+        <rdfs:range rdf:resource="http://vocab.info/calendars#E53_Place"/>
+        <rdfs:domain rdf:resource="http://purl.org/NET/crm-owl#ReligiousEvent"/>
+    </rdf:Property>
     <rdf:Property rdf:about="http://vocab.info/calendars#experiences">
         <owl:inverseOf rdf:resource="http://vocab.info/calendars#isExperienceBy"/>
         <rdfs:range rdf:resource="http://vocab.info/calendars#ReligiousEvent"/>
@@ -214,8 +222,7 @@
     <rdf:Property
         rdf:about="http://vocab.info/calendars#temporalTypeOfCelebrationrelatesToCelebrationhasTemporalFeasttype">
         <rdfs:comment>The temporal relationship between a celebration and the standard chronological
-            place of a feast (e.g. "octava", "vigilia"). This could even include more elaborate
-            descriptions like “the first sunday before …”</rdfs:comment>
+            place of a feast (e.g. "octava", "vigilia")</rdfs:comment>
         <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
         <rdfs:domain rdf:resource="http://vocab.info/calendars#Celebration"/>
     </rdf:Property>
@@ -300,16 +307,4 @@
         <rdfs:domain rdf:resource="http://vocab.info/calendars#Actor"/>
         <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
     </rdf:Property>
-    <!--    other properties by dbpedia.org:
-     dbo:beatifiedBy
-    dbo:beatifiedDate
-    dbo:beatifiedPlace
-    dbo:canonizedBy
-    dbo:canonizedDate
-    dbo:canonizedPlace
-    dbo:iconographicAttributes
-    dbo:majorShrine
-    dbo:suppreddedDate
-    dbo:veneratedIn
--->
 </rdf:RDF>
