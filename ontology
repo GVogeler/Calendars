@@ -275,7 +275,9 @@
         <rdfs:domain
             rdf:resource="http://vocab.info/calendars/#Calendar"/>
     </rdf:Property>
-    <rdf:Class rdf:about="http://www.semanticdesktop.org/ontologies/2007/04/02/ncal#Calendar">
+    <rdf:Class rdf:about="http://vocab.info/calendars#Calendar">
+        <owl:sameAs
+            rdf:resource="http://www.semanticdesktop.org/ontologies/2007/04/02/ncal#Calendar"/>
         <rdfs:subClassOf rdf:resource="http://purl.org/NET/crm-owl#E31_Document"/>
         <rdfs:subClassOf rdf:resource="http://purl.org/NET/crm-owl#E73_Information_Object"/>
         <rdfs:comment>A text documenting the temporal distribution of religious practice. This texts
