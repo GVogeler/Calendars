@@ -94,6 +94,7 @@
     -->
     <rdf:Class rdf:about="http://vocab.info/calendars#CalendarEntry">
         <rdfs:subClassOf rdf:resource="http://purl.org/NET/crm-owl#E34_Inscription"/>
+        <owl:sameAs rdf:resource="http://www.semanticdesktop.org/ontologies/2007/04/02/ncal#CalendarDataObject"/>
         <rdfs:comment>Any part of text given by the “document” and making a statement, in particular
             about a celebration (connection of date+feast+community), but including other
             information (obits, annalistic notes, astrological or astronomical
@@ -170,6 +171,7 @@
         <rdfs:range rdf:resource="http://vocab.info/calendars#SourceCreation"/>
     </rdf:Property>
     <rdf:Property rdf:about="http://vocab.info/calendars#hasIdentifier">
+        <owl:inverseOf rdf:resource="http://vocab.info/calendars#isIdentifierOf"/>
         <rdfs:domain rdf:resource="http://vocab.info/calendars#Source"/>
         <rdfs:range rdf:resource="http://vocab.info/calendars#SourceIdentifier"/>
     </rdf:Property>
