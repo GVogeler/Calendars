@@ -31,6 +31,7 @@
         allows only to link the name E41_Appellation</rdfs:comment>
     </rdf:Class>
     <rdf:Property rdf:about="http://vocab.info/calendars#hasAppellation">
+        <owl:inverseOf rdf:resource="http://vocab.info/calendars#isAppellationOf"/>
         <rdfs:comment>The standardized given name of an E39_Actor</rdfs:comment>
         <rdfs:range rdf:resource="http://purl.org/NET/crm-owl#E41_Appellation"/>
         <rdfs:domain rdf:resource="http://purl.org/NET/crm-owl#E39_Actor"/>
@@ -46,6 +47,7 @@
             translatio).</rdfs:comment>
     </rdfs:Class>
     <rdf:Property rdf:about="http://vocab.info/calendars#experiences">
+        <owl:inverseOf rdf:resource="http://vocab.info/calendars#isExperienceBy"/>
         <rdfs:range rdf:resource="http://vocab.info/calendars#ReligiousEvent"/>
         <rdfs:domain rdf:resource="http://purl.org/NET/crm-owl#E39_Actor"/>
     </rdf:Property>
