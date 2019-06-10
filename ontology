@@ -148,27 +148,27 @@
     <rdf:Class rdf:about="http://vocab.info/calendars#Document">
         <rdfs:subClassOf rdf:resource="http://purl.org/NET/crm-owl#E31_Document"/>
         <rdfs:comment>A text documenting the temporal distribution of religious
-            practice.</rdfs:comment>
+            practice. This texts may be instantiated in several copies or witnesses, which are in the Source class.</rdfs:comment>
     </rdf:Class>
     <rdf:Property rdf:about="http://vocab.info/calendars#hasWitness">
         <owl:inverseOf rdf:resource="http://vocab.info/calendars#isWitnessOf"/>
         <rdfs:domain rdf:resource="http://vocab.info/calendars#Source"/>
         <rdfs:range rdf:resource="http://vocab.info/calendars#Document"/>
     </rdf:Property>
+    <rdf:Property rdf:about="http://vocab.info/calendars#isStructuredIn">
+        <rdfs:domain rdf:resource="http://vocab.info/calendars#Document"/>
+        <rdfs:range rdf:resource="http://vocab.info/calendars#CalendarTemporalStructure"/>
+    </rdf:Property>
+    
+    <rdf:Class rdf:about="http://vocab.info/calendars#Repository">
+        <rdfs:subClassOf rdf:resource="http://purl.org/NET/crm-owl#E22_Man-Made_Object"/>
+        <rdfs:comment>The object comprising a calendar. Typically, it is a book in codex form, but
+            it can be a foldable sheet of parchment or paper. It can be handwritten or
+            printed.</rdfs:comment>
+    </rdf:Class>
+
     <rdf:Property rdf:about="http://vocab.info/calendars#hasSourceInfo">
         <rdfs:comment>verbal description of the source</rdfs:comment>
-        <rdfs:domain rdf:resource="http://vocab.info/calendars#Document"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-    </rdf:Property>
-    <rdf:Property rdf:about="http://vocab.info/calendars#hasRepository">
-        <rdfs:comment>Name of the Repository
-            (https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-repository.html)</rdfs:comment>
-        <rdfs:domain rdf:resource="http://vocab.info/calendars#Document"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-    </rdf:Property>
-    <rdf:Property rdf:about="http://vocab.info/calendars#hasIdno">
-        <rdfs:comment>Name of the Repository
-            (https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-idno.html)</rdfs:comment>
         <rdfs:domain rdf:resource="http://vocab.info/calendars#Document"/>
         <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
     </rdf:Property>
@@ -250,10 +250,6 @@
             rdf:resource="http://www.semanticdesktop.org/ontologies/2007/04/02/ncal#Calendar"/>
         <rdfs:comment>A calendar in practice in a religious order.</rdfs:comment>
     </rdf:Class>
-    <rdf:Property rdf:about="http://vocab.info/calendars#isCelebratedBy">
-        <rdfs:range rdf:resource="http://vocab.info/calendars#Feast"/>
-        <rdfs:domain rdf:resource="http://vocab.info/calendars#ReligiousEvent"/>
-    </rdf:Property>
     <rdf:Property rdf:about="http://vocab.info/calendars#hasFunctionIn">
         <rdfs:comment>The saint can be identified by a ecclesiastical function at a specific place
             (e.g. bishop in ...)</rdfs:comment>
