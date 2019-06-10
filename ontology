@@ -125,8 +125,9 @@
         <rdfs:comment>The CalendarPhysicalStructure is typically a page. It could be used to record
             each line on a page.</rdfs:comment>
     </rdf:Class>
-    <rdf:Property rdf:about="http://vocab.info/calendars#isPartOf">
+    <rdf:Property rdf:about="http://vocab.info/calendars#isContainedBy">
         <owl:sameAs rdf:resource="http://purl.org/dc/terms/isPartOf"/>
+        <owl:inverseOf rdf:resource="http://vocab.info/calendars#contains"/>
         <rdfs:domain rdf:resource="http://vocab.info/calendars#CalendarPhysicalStructure"/>
         <rdfs:range rdf:resource="http://vocab.info/calendars#CalendarPart"/>
     </rdf:Property>
