@@ -164,7 +164,7 @@
     </rdf:Class>
     <rdf:Property rdf:about="http://vocab.info/calendars#hasWitness">
         <owl:inverseOf rdf:resource="http://vocab.info/calendars#isWitnessOf"/>
-        <rdfs:domain rdf:resource="http://vocab.info/calendars#Source"/>
+        <rdfs:domain rdf:resource="http://vocab.info/calendars#CalendarPart"/>
         <rdfs:range rdf:resource="http://vocab.info/calendars#Calendar"/>
     </rdf:Property>
     <rdf:Property rdf:about="http://vocab.info/calendars#isStructuredIn">
@@ -233,19 +233,16 @@
             evening of the feast.</rdfs:comment>
     </rdf:Property>
     <rdf:Property rdf:about="http://vocab.info/calendars#isPerformedIn">
+        <owl:inverseOf rdf:resource="http://vocab.info/calendars#performs"/>
         <rdfs:range rdf:resource="http://vocab.info/calendars#EcclesiasticalUnit"/>
         <rdfs:domain rdf:resource="http://vocab.info/calendars#Celebration"/>
     </rdf:Property>
-    <rdf:Property rdf:about="http://vocab.info/calendars#isDocumentedIn">
-        <rdfs:subPropertyOf rdf:resource="http://vocab.info/calendars#sourcehasSource"/>
+    <rdf:Property rdf:about="http://vocab.info/calendars#isPrescribedBy">
+        <owl:inverseOf rdf:resource="http://vocab.info/calendars#prescribes"/>
+        <rdfs:domain rdf:resource="http://vocab.info/calendars#Celebration"/>
         <rdfs:range rdf:resource="http://vocab.info/calendars#Calendar"/>
-        <rdfs:domain rdf:resource="http://vocab.info/calendars#Celebration"/>
-    </rdf:Property>
+        </rdf:Property>
     <rdf:Class rdf:about="http://vocab.info/calendars#EcclesiasticalUnit"/>
-    <rdf:Property rdf:about="http://vocab.info/calendars#isPerformedIn">
-        <rdfs:range rdf:resource="http://vocab.info/calendars#EcclesiasticalUnit"/>
-        <rdfs:domain rdf:resource="http://vocab.info/calendars#Celebration"/>
-    </rdf:Property>
     <rdf:Class rdf:about="http://vocab.info/calendars#Diocese">
         <rdfs:subClassOf rdf:resource="http://vocab.info/calendars#EcclesiasticalUnit"/>
     </rdf:Class>
@@ -263,17 +260,9 @@
         <rdfs:subClassOf rdf:resource="http://vocab.info/calendars#EcclesiasticalUnit"/>
     </rdf:Class>
     <rdf:Property rdf:about="http://vocab.info/calendars#hasCalendar">
+        <owl:inverseOf rdf:resource="http://vocab.info/calendars#isCalendarOf"/>
         <rdfs:domain rdf:resource="http://vocab.info/calendars#EcclesiasticalUnit"/>
-        <rdfs:range
-            rdf:resource="http://vocab.info/calendars#Calendar"/>
-    </rdf:Property>
-    <rdf:Property rdf:about="http://vocab.info/calendars#isDefinedBy">
-        <owl:inverseOf rdf:resource="http://vocab.info/calendars#defines"/>
-    </rdf:Property>
-    <rdf:Property rdf:about="http://vocab.info/calendars#defines">
-        <rdfs:range rdf:resource="http://vocab.info/calendars#Celebration"/>
-        <rdfs:domain
-            rdf:resource="http://vocab.info/calendars/#Calendar"/>
+        <rdfs:range rdf:resource="http://vocab.info/calendars#Calendar"/>
     </rdf:Property>
     <rdf:Class rdf:about="http://vocab.info/calendars#Calendar">
         <owl:sameAs
