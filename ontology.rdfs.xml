@@ -22,11 +22,15 @@
     </void:Dataset>
     <rdf:Class rdf:about="http://vocab.info/calendars#Actor">
         <rdfs:subClassOf rdf:resource="http://purl.org/NET/crm-owl#E39_Actor"/>
-        <rdfs:comment>The actor experiencing the religious event. It is mostly a saint
-            (http://dbpedia.org/ontology/Saint), in which case, they are a subClassOf E21_Person,
-            but it can be a supernatural being (e.g. archangel Michael) or the different persons of
-            God and Trinity</rdfs:comment>
-    </rdf:Class>
+        <rdfs:comment>The Actor experiencing the religious event. It is typically 
+            (i) a saint as defined in http://dbpedia.org/ontology/Saint, and therefore a subClassOf E21_Person,
+            (ii) a supernatural being (e.g. archangel Michael),
+            (iii) different persons of God and Trinity
+            (iv) a group of persons, and therefore a subClassOf E74_Group. 
+            The latter takes two main forms: a group that is known collectively (e.g. Forty Martyrs of Sebaste, or
+            Eleven Thousand Virgins), or a group that is described with personal names, either in full (e.g. "Dionysii, Rustici et Eleutherii") or in 
+            reduced form (e.g. "Dionysii et socii ejus"). </rdfs:comment>
+        </rdf:Class>
     <rdf:Class rdf:about="http://vocab.info/calendars#ActorAppellation">
         <rdfs:subClassOf rdf:resource="http://purl.org/NET/crm-owl#E41_Appellation"/>
         <rdfs:comment>This class is to be used to indicate the name of the E39_Actor when the latter
@@ -97,6 +101,10 @@
             linked to an Actor (here to be considered as a Mystery, itself linked to Christ, rather
             than part of their body) and the ReligiousEvent can be either the particular revelation to 
             one saint, or the general and progressive revelation of the Mystery (modelled as Actor).</rdfs:comment>
+        <rdfs:comment>Different views are represented on the Vigils and Octaves. In systems that do not differenciate 
+        between Feast ad Celebration, they are considered as another Feast. However, in handwritten notes, Denis Muzerelle 
+        indicates "+vigilia" or "+oct." as ranking of a Feast and do not repeat the information on the specific days. One can suggest
+        that Vigils and Octaves are additional "Celebration"(s) for one unique "Feast".</rdfs:comment>
     </rdfs:Class>
     <rdfs:Class rdf:about="http://vocab.info/calendars#CelebrationDate">
         <rdfs:subClassOf rdf:resource="http://purl.org/NET/crm-owl#E50_Date"/>
@@ -105,11 +113,14 @@
             through the Easter cycle. In the latter case, calendar entries providing evidence for
             the Celebration may be positioned at a specific date. The most famous example is Easter,
             that is regularly inscribed in calendars at the date March, 25th. </rdfs:comment>
+        <rdfs:comment>According to the answer given to the definition of Feast for Vigils and Octaves, one can consider
+        them as Celebration linked to a Feast, in which case the CelebrationDate is defined through the type of relation of Celebration to Feast.</rdfs:comment>
     </rdfs:Class>
     <rdf:Property rdf:about="http://vocab.info/calendars#isCelebratedBy">
         <owl:inverseOf rdf:resource="http://vocab.info/calendars#celebrates"/>
         <rdfs:range rdf:resource="http://vocab.info/calendars#Celebration"/>
         <rdfs:domain rdf:resource="http://vocab.info/calendars#Feast"/>
+        <rdfs:comment>If "vigilia" and "octava" is considered a relation from Celebration to Feast, one should expand this part of the model</rdfs:comment>
     </rdf:Property>
     <rdf:Property rdf:about="http://vocab.info/calendars#isCommemorationOf">
         <owl:inverseOf rdf:resource="http://vocab.info/calendars#commemorates"/>
