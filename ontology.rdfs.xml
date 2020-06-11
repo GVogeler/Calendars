@@ -32,7 +32,6 @@
             Eleven Thousand Virgins), or a group that is described with personal names, either in full (e.g. "Dionysii, Rustici et Eleutherii") or in 
             reduced form (e.g. "Dionysii et socii ejus"). </rdfs:comment>
         </rdfs:Class>
-    <rdfs:Class></rdfs:Class>
     <rdfs:Class rdf:about="http://vocab.info/calendars#ActorAppellation">
         <rdfs:subClassOf rdf:resource="http://purl.org/NET/crm-owl#E41_Appellation"/>
         <rdfs:comment>This class is to be used to indicate the name of the E39_Actor when the latter
