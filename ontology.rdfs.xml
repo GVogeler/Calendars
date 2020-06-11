@@ -19,7 +19,7 @@
         <dc:creator>George Gordon</dc:creator>
         <dc:creator>Elisabeth Raunig (elisabeth.raunig@uni-graz.at)</dc:creator>
         <dc:creator>Georg Vogeler (georg.vogeler@uni-graz.at)</dc:creator>
-        <owl:versionInfo>V 0.1, 2019-05-23</owl:versionInfo>
+        <owl:versionInfo>V 0.1.1, 2020-06-11</owl:versionInfo>
     </void:Dataset>
     <rdfs:Class rdf:about="http://vocab.info/calendars#Actor">
         <rdfs:subClassOf rdf:resource="http://purl.org/NET/crm-owl#E39_Actor"/>
@@ -32,7 +32,33 @@
             Eleven Thousand Virgins), or a group that is described with personal names, either in full (e.g. "Dionysii, Rustici et Eleutherii") or in 
             reduced form (e.g. "Dionysii et socii ejus"). </rdfs:comment>
         </rdfs:Class>
-    <rdfs:Class></rdfs:Class>
+    <rdfs:Class rdf:about="http://vocab.info/calendars#Saint">
+        <owl:equivalentClass rdf:resource="http://www.wikidata.org/entity/Q43115"/>
+        <owl:equivalentClass rdf:resource="http://dbpedia.org/ontology/Saint"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/NET/crm-owl#E21_Person"/>
+        <rdfs:label xml:lang="en">Saint</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://vocab.info/calendars#Actor"/>
+    </rdfs:Class>
+    <rdfs:Class rdf:about="http://vocab.info/calendars#SupernaturalBeing">
+        <owl:equivalentClass rdf:resource="https://www.wikidata.org/wiki/Q28855038"/>
+        <rdfs:comment>e.g. archangel Michael</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="http://vocab.info/calendars#Actor"/>
+    </rdfs:Class>
+    <rdfs:Class rdf:about="http://vocab.info/calendars#God_Trinity">
+        <rdfs:comment>the different persons of God and Trinity</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="http://vocab.info/calendars#Actor"/>
+    </rdfs:Class>
+    <rdfs:Class rdf:about="http://vocab.info/calendars#Collective">
+        <rdfs:comment>a group of persons known collectively (e.g. Forty Martyrs of Sebaste, or
+            Eleven Thousand Virgins)</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="http://purl.org/NET/crm-owl#E74_Group"/>
+    </rdfs:Class>
+    <rdfs:Class rdf:about="http://vocab.info/calendars#Group_of_Individuals">
+        <rdfs:comment>a group that is described with personal names, either in full (e.g. "Dionysii, Rustici et Eleutherii") or in 
+            reduced form (e.g. "Dionysii et socii ejus")</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="http://purl.org/NET/crm-owl#E74_Group"/>
+        <rdfs:subClassOf rdf:resource="http://vocab.info/calendars#Actor"/>
+    </rdfs:Class>
     <rdfs:Class rdf:about="http://vocab.info/calendars#ActorAppellation">
         <rdfs:subClassOf rdf:resource="http://purl.org/NET/crm-owl#E41_Appellation"/>
         <rdfs:comment>This class is to be used to indicate the name of the E39_Actor when the latter
